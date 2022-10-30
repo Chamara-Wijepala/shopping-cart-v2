@@ -1,3 +1,30 @@
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200;
+  src: local(""),
+    url("./assets/fonts/manrope-v13-latin-200.woff2") format("woff2"),
+    url("./assets/fonts/manrope-v13-latin-200.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("./assets/fonts/manrope-v13-latin-regular.woff2") format("woff2"),
+    url("./assets/fonts/manrope-v13-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""),
+    url("./assets/fonts/manrope-v13-latin-800.woff2") format("woff2"),
+    url("./assets/fonts/manrope-v13-latin-800.woff") format("woff");
+}
+
 /*  Edited version of CSS rest by Andy Bell */
 /*  https://piccalil.li/blog/a-modern-css-reset/ */
 
@@ -30,6 +57,7 @@ body {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: "Manrope", sans-serif;
 }
 
 a {
