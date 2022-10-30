@@ -117,3 +117,63 @@ svg {
     scroll-behavior: auto !important;
   }
 }
+
+/* utilities */
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-800 {
+  font-size: var(--fs-800);
+}
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+.fw-400 {
+  font-weight: 400;
+}
+.fw-800 {
+  font-weight: 800;
+}
+
+.clr-primary-100 {
+  color: hsl(var(--clr-primary-100));
+}
+.clr-secondary-800 {
+  color: hsl(var(--clr-secondary-300));
+}
+.clr-secondary-300 {
+  color: hsl(var(--clr-secondary-800));
+}
+.clr-accent-400 {
+  color: hsl(var(--clr-accent-400));
+}
+
+.bg-primary-100 {
+  background-color: hsl(var(--clr-primary-100));
+}
+.bg-secondary-800 {
+  background-color: hsl(var(--clr-secondary-300));
+}
+.bg-secondary-300 {
+  background-color: hsl(var(--clr-secondary-800));
+}
+.bg-accent-400 {
+  background-color: hsl(var(--clr-accent-400));
+}
+
+.container {
+  max-width: 75rem;
+  padding: 1rem;
+  margin-inline: auto;
+}
