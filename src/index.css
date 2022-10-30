@@ -1,3 +1,18 @@
+:root {
+  --clr-primary-100: 0 0% 100%;
+  --clr-secondary-300: 17 100% 78%;
+  --clr-secondary-800: 275 17% 42%;
+  --clr-accent-400: 351 100% 70%;
+
+  --fs-200: 0.5rem;
+  --fs-400: 1rem;
+  --fs-600: 1.5rem;
+  --fs-800: 2rem;
+  --fs-900: 3rem;
+}
+
+/* fonts */
+
 @font-face {
   font-family: "Manrope";
   font-style: normal;
