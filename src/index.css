@@ -1,7 +1,7 @@
 :root {
   --clr-primary-100: 0 0% 100%;
-  --clr-secondary-300: 17 100% 78%;
-  --clr-secondary-800: 275 17% 42%;
+  --clr-secondary-300: 275 17% 42%;
+  --clr-secondary-800: 17 100% 78%;
   --clr-accent-400: 351 100% 70%;
 
   --fs-200: 0.5rem;
