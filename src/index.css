@@ -1,7 +1,7 @@
 :root {
   --clr-primary-100: 0 0% 100%;
-  --clr-secondary-300: 275 17% 42%;
-  --clr-secondary-800: 17 100% 78%;
+  --clr-secondary-300: 17 100% 78%;
+  --clr-secondary-800: 275 17% 42%;
   --clr-accent-400: 351 100% 70%;
 
   --fs-200: 0.5rem;
@@ -157,27 +157,27 @@ svg {
 .clr-primary-100 {
   color: hsl(var(--clr-primary-100));
 }
-.clr-secondary-800 {
-  color: hsl(var(--clr-secondary-300));
-}
 .clr-secondary-300 {
-  color: hsl(var(--clr-secondary-800));
+  color: hsl(var(--clr-secondary-300));
 }
 .clr-accent-400 {
   color: hsl(var(--clr-accent-400));
+}
+.clr-secondary-800 {
+  color: hsl(var(--clr-secondary-800));
 }
 
 .bg-primary-100 {
   background-color: hsl(var(--clr-primary-100));
 }
-.bg-secondary-800 {
-  background-color: hsl(var(--clr-secondary-300));
-}
 .bg-secondary-300 {
-  background-color: hsl(var(--clr-secondary-800));
+  background-color: hsl(var(--clr-secondary-300));
 }
 .bg-accent-400 {
   background-color: hsl(var(--clr-accent-400));
+}
+.bg-secondary-800 {
+  background-color: hsl(var(--clr-secondary-800));
 }
 
 .container {
