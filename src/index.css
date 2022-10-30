@@ -126,7 +126,27 @@ svg {
   }
 }
 
+/* general styles */
+
+a,
+.nav-item:hover,
+.nav-item:focus {
+  color: hsl(var(--clr-secondary-300));
+}
+
+.nav-item.active {
+  color: hsl(var(--clr-accent-400));
+}
+
 /* utilities */
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
 
 .fs-200 {
   font-size: var(--fs-200);
@@ -178,6 +198,15 @@ svg {
 }
 .bg-secondary-800 {
   background-color: hsl(var(--clr-secondary-800));
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .container {
