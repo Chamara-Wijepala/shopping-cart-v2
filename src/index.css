@@ -154,7 +154,22 @@ svg {
   background-color: hsl(var(--clr-secondary-300));
 }
 
+/* animations */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* utilities */
+
+.fade-in-1 {
+  animation: fadeIn 1s;
+}
 
 .uppercase {
   text-transform: uppercase;

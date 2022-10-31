@@ -5,7 +5,7 @@ import "./home.css";
 export default function Home() {
   return (
     <>
-      <div className="hero-section clr-primary-100">
+      <div className="hero-section clr-primary-100 fade-in-1">
         <div className="hero-text container flex">
           <h2 className="fw-800 fs-900 uppercase">Best of the best</h2>
 
