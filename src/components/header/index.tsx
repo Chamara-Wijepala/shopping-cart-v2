@@ -25,11 +25,18 @@ export default function Header({ itemCount }: { itemCount: number }) {
             "primary-nav bg-secondary-800 flex"
           )}
         >
-          <NavLink to="/" className="nav-item fw-800 clr-primary-100" end>
-            HOME
+          <NavLink
+            to="/"
+            end
+            className="nav-item fw-800 clr-primary-100 uppercase"
+          >
+            Home
           </NavLink>
-          <NavLink to="/shop" className="nav-item fw-800 clr-primary-100">
-            SHOP
+          <NavLink
+            to="/shop"
+            className="nav-item fw-800 clr-primary-100 uppercase"
+          >
+            Shop
           </NavLink>
         </nav>
 
