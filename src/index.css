@@ -1,5 +1,6 @@
 :root {
   --clr-primary-100: 0 0% 100%;
+  --clr-secondary-200: 30 30% 96%;
   --clr-secondary-300: 17 100% 78%;
   --clr-secondary-800: 253 13% 21%;
   --clr-accent-400: 351 100% 70%;
@@ -216,6 +217,9 @@ svg {
 .clr-primary-100 {
   color: hsl(var(--clr-primary-100));
 }
+.clr-secondary-200 {
+  color: hsl(var(--clr-secondary-200));
+}
 .clr-secondary-300 {
   color: hsl(var(--clr-secondary-300));
 }
@@ -228,6 +232,9 @@ svg {
 
 .bg-primary-100 {
   background-color: hsl(var(--clr-primary-100));
+}
+.bg-secondary-200 {
+  background-color: hsl(var(--clr-secondary-200));
 }
 .bg-secondary-300 {
   background-color: hsl(var(--clr-secondary-300));
