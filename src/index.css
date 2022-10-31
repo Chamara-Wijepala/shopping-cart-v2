@@ -5,6 +5,7 @@
   --clr-accent-400: 351 100% 70%;
 
   --fs-200: 0.5rem;
+  --fs-300: 0.75rem;
   --fs-400: 1rem;
   --fs-600: 1.25rem;
   --fs-800: 1.5rem;
@@ -138,6 +139,21 @@ svg {
   color: hsl(var(--clr-accent-400));
 }
 
+/* components */
+
+.btn {
+  padding: 0.875rem 2rem;
+  transition: color 300ms, background-color 300ms, border 300ms ease-in-out;
+}
+
+.btn--accent {
+  background-color: hsl(var(--clr-accent-400));
+}
+.btn--accent:hover,
+.btn--accent:focus {
+  background-color: hsl(var(--clr-secondary-300));
+}
+
 /* utilities */
 
 .uppercase {
@@ -154,6 +170,9 @@ svg {
 
 .fs-200 {
   font-size: var(--fs-200);
+}
+.fs-300 {
+  font-size: var(--fs-300);
 }
 .fs-400 {
   font-size: var(--fs-400);

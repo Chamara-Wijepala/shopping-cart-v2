@@ -15,7 +15,10 @@ export default function Home() {
           </p>
 
           <Link to="/shop">
-            <button type="button" className="uppercase">
+            <button
+              type="button"
+              className="btn btn--accent fs-300 fw-800 uppercase"
+            >
               Shop now
             </button>
           </Link>
