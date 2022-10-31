@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
       <Header itemCount={0} />
-      <main className="container">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />

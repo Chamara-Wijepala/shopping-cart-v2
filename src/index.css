@@ -128,7 +128,7 @@ svg {
 
 /* general styles */
 
-a,
+.anchor,
 .nav-item:hover,
 .nav-item:focus {
   color: hsl(var(--clr-secondary-300));
@@ -139,6 +139,10 @@ a,
 }
 
 /* utilities */
+
+.uppercase {
+  text-transform: uppercase;
+}
 
 .flex {
   display: flex;
