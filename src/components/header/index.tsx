@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { BiShoppingBag } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
-import { HiOutlineHomeModern } from "react-icons/hi2";
+import { GoHome } from "react-icons/go";
 import { AiOutlineShop } from "react-icons/ai";
 
 import SideMenu from "components/side-menu";
@@ -87,7 +87,7 @@ export default function Header({ itemCount }: { itemCount: number }) {
                 end
                 className="nav-item fs-800 fw-800 uppercase flex align-center btn-with-icon"
               >
-                Home <HiOutlineHomeModern aria-hidden />
+                Home <GoHome aria-hidden />
               </NavLink>
               <NavLink
                 to="/shop"
