@@ -24,6 +24,10 @@ export default function Header({ itemCount }: { itemCount: number }) {
         </Link>
 
         <div className="header-items flex">
+          {/*
+            in order to add display: none at small screen sizes the nav doesn't
+            have the flex utility class
+          */}
           <nav
             className={clsx(
               isSideNavOpen && "open",
@@ -45,23 +49,24 @@ export default function Header({ itemCount }: { itemCount: number }) {
             </NavLink>
           </nav>
 
-          {/* cart menu btn */}
+          {/* open cart btn */}
           <button
             type="button"
+            aria-label="open cart"
             className="btn-with-icon nav-item fw-800 clr-primary-100 flex align-center"
           >
-            <span className="sr-only">cart</span>
-            <BiShoppingBag className="icon-md" /> {itemCount}
-            <span className="sr-only">items</span>
+            <BiShoppingBag aria-hidden className="icon-md" />
+            <span aria-hidden>{itemCount}</span>
           </button>
 
-          {/* side nav menu btn */}
+          {/* open side nav btn */}
           <button
             type="button"
+            aria-label="open navigation"
             className="open-nav-btn nav-item clr-primary-100"
             onClick={() => setIsSideNavOpen(true)}
           >
-            <GiHamburgerMenu className="icon-lg" />
+            <GiHamburgerMenu aria-hidden className="icon-lg" />
           </button>
         </div>
 
@@ -69,10 +74,11 @@ export default function Header({ itemCount }: { itemCount: number }) {
           <div className="side-menu-nav-container clr-secondary-800 flex">
             <button
               type="button"
+              aria-label="close"
               className="clr-secondary-800"
               onClick={() => setIsSideNavOpen(false)}
             >
-              <MdClose className="icon-lg" />
+              <MdClose aria-hidden className="icon-lg" />
             </button>
 
             <nav className="side-menu-nav flex">
@@ -81,13 +87,13 @@ export default function Header({ itemCount }: { itemCount: number }) {
                 end
                 className="nav-item fs-800 fw-800 uppercase flex align-center btn-with-icon"
               >
-                Home <HiOutlineHomeModern />
+                Home <HiOutlineHomeModern aria-hidden />
               </NavLink>
               <NavLink
                 to="/shop"
                 className="nav-item fs-800 fw-800 uppercase flex align-center btn-with-icon"
               >
-                Shop <AiOutlineShop />
+                Shop <AiOutlineShop aria-hidden />
               </NavLink>
             </nav>
           </div>
