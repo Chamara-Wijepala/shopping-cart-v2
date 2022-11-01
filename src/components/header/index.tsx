@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { BiShoppingBag } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -13,6 +13,14 @@ import "./header.css";
 
 export default function Header({ itemCount }: { itemCount: number }) {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+
+  /*
+    The active class on the Shop NavLink doesn't work when visiting a dynamic
+    route as it's set to direct to shop/all. This code gets the path name which
+    is used to set the active class whenever user is in the shop page
+  */
+  const location = useLocation();
+  const path = location.pathname.split("/")[1];
 
   return (
     <header className="bg-secondary-800">
@@ -29,6 +37,7 @@ export default function Header({ itemCount }: { itemCount: number }) {
             have the flex utility class
           */}
           <nav
+            aria-label="primary navigation"
             className={clsx(
               isSideNavOpen && "open",
               "primary-nav bg-secondary-800"
@@ -42,8 +51,11 @@ export default function Header({ itemCount }: { itemCount: number }) {
               Home
             </NavLink>
             <NavLink
-              to="/shop"
-              className="nav-item fw-800 clr-primary-100 uppercase"
+              to="/shop/all"
+              className={clsx(
+                path === "shop" && "active",
+                "nav-item fw-800 clr-primary-100 uppercase"
+              )}
             >
               Shop
             </NavLink>
@@ -81,7 +93,7 @@ export default function Header({ itemCount }: { itemCount: number }) {
               <MdClose aria-hidden className="icon-lg" />
             </button>
 
-            <nav className="side-menu-nav flex">
+            <nav aria-label="primary navigation" className="side-menu-nav flex">
               <NavLink
                 to="/"
                 end
@@ -90,7 +102,7 @@ export default function Header({ itemCount }: { itemCount: number }) {
                 Home <GoHome aria-hidden />
               </NavLink>
               <NavLink
-                to="/shop"
+                to="/shop/all"
                 className="nav-item fs-800 fw-800 uppercase flex align-center btn-with-icon"
               >
                 Shop <AiOutlineShop aria-hidden />

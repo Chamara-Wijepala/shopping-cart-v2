@@ -14,7 +14,7 @@ export default function Home() {
             jewellery to show off to your friends? We will not let you down.
           </p>
 
-          <Link to="/shop">
+          <Link to="/shop/all">
             <button
               type="button"
               className="btn btn--accent fs-300 fw-800 uppercase"
@@ -25,7 +25,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container">home</div>
+      <div className="container">
+        <nav aria-label="secondary navigation">
+          <Link to="/shop/men">Men&apos;s Clothing</Link>
+          <Link to="/shop/women">Women&apos;s Clothing</Link>
+          <Link to="/shop/jewellery">Jewellery</Link>
+        </nav>
+      </div>
     </>
   );
 }
