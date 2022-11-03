@@ -1,0 +1,26 @@
+.category-tab-panel {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tab-item {
+  padding: 0.5rem;
+  color: hsl(var(--clr-secondary-800) / 0.8);
+  background-color: hsl(var(--clr-secondary-300) / 0.6);
+  transition: background-color 200ms ease-in-out;
+}
+
+.tab-item:hover,
+.tab-item:focus {
+  background-color: hsl(var(--clr-accent-400) / 0.4);
+}
+
+.tab-item.active {
+  background-color: hsl(var(--clr-accent-400) / 0.6);
+}
+
+@media (min-width: 48em) {
+  .category-tab-panel {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
