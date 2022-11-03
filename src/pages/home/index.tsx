@@ -26,7 +26,7 @@ export default function Home() {
       </div>
 
       <div className="container">
-        <ul aria-label="categories" className="category-list">
+        <ul aria-label="categories" className="category-list no-list-style">
           <li>
             <Link to="shop/men" className="nav-item">
               <div className="category-card flex align-center">
