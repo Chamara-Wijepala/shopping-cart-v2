@@ -7,6 +7,7 @@
 
   --fs-200: 0.5rem;
   --fs-300: 0.75rem;
+  --fs-350: 0.8125rem;
   --fs-400: 1rem;
   --fs-600: 1.25rem;
   --fs-800: 1.5rem;
@@ -148,6 +149,9 @@ svg {
   padding: 0.875rem 2rem;
   transition: color 300ms, background-color 300ms, border 300ms ease-in-out;
 }
+.btn--small {
+  padding: 0.5rem 1.5rem;
+}
 
 .btn--accent {
   background-color: hsl(var(--clr-accent-400));
@@ -155,6 +159,16 @@ svg {
 .btn--accent:hover,
 .btn--accent:focus {
   background-color: hsl(var(--clr-secondary-300));
+}
+
+.btn--accent--inverse {
+  border: 3px solid hsl(var(--clr-accent-400));
+  color: hsl(var(--clr-accent-400));
+}
+.btn--accent--inverse:hover,
+.btn--accent--inverse:focus {
+  color: hsl(var(--clr-primary-100));
+  background-color: hsl(var(--clr-accent-400));
 }
 
 /* animations */
@@ -165,6 +179,15 @@ svg {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -189,9 +212,11 @@ svg {
 .flex {
   display: flex;
 }
-
 .align-center {
   align-items: center;
+}
+.justify-center {
+  justify-content: center;
 }
 
 .icon-md {
@@ -209,6 +234,9 @@ svg {
 }
 .fs-300 {
   font-size: var(--fs-300);
+}
+.fs-350 {
+  font-size: var(--fs-350);
 }
 .fs-400 {
   font-size: var(--fs-400);
