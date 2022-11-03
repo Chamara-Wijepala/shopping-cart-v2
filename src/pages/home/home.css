@@ -31,6 +31,27 @@
   max-width: 60ch;
 }
 
+.category-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.category-card {
+  background-color: hsl(var(--clr-primary-100));
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 100%;
+  border-radius: 8px;
+}
+
+.category-card__image {
+  max-width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+}
+
 @media (min-width: 48em) {
   .hero-section {
     padding-block: 4rem;
@@ -38,6 +59,12 @@
 
   .hero-text {
     gap: 1.5rem;
+  }
+
+  .category-list {
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: 1rem;
   }
 }
 

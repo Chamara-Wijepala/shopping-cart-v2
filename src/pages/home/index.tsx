@@ -26,11 +26,47 @@ export default function Home() {
       </div>
 
       <div className="container">
-        <nav aria-label="secondary navigation">
-          <Link to="/shop/men">Men&apos;s Clothing</Link>
-          <Link to="/shop/women">Women&apos;s Clothing</Link>
-          <Link to="/shop/jewellery">Jewellery</Link>
-        </nav>
+        <ul aria-label="categories" className="category-list">
+          <li>
+            <Link to="shop/men" className="nav-item">
+              <div className="category-card flex align-center">
+                <img
+                  src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                  alt=""
+                  aria-hidden
+                  className="category-card__image"
+                />
+                <p className="fw-800 uppercase">Men&apos;s Clothing</p>
+              </div>
+            </Link>
+          </li>
+          <li>
+            <Link to="women" className="nav-item">
+              <div className="category-card flex align-center">
+                <img
+                  src="https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+                  alt=""
+                  aria-hidden
+                  className="category-card__image"
+                />
+                <p className="fw-800 uppercase">Women&apos;s Clothing</p>
+              </div>
+            </Link>
+          </li>
+          <li>
+            <Link to="jewellery" className="nav-item">
+              <div className="category-card flex align-center">
+                <img
+                  src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
+                  alt=""
+                  aria-hidden
+                  className="category-card__image"
+                />
+                <p className="fw-800 uppercase">Jewellery</p>
+              </div>
+            </Link>
+          </li>
+        </ul>
       </div>
     </>
   );
