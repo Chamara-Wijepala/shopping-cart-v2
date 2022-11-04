@@ -26,6 +26,10 @@ export default function Home() {
       </div>
 
       <div className="container">
+        <h2 className="homepage-heading fs-800 fw-800 uppercase">
+          Shop by category
+        </h2>
+
         <ul aria-label="categories" className="category-list no-list-style">
           <li>
             <Link to="shop/men" className="nav-item">
