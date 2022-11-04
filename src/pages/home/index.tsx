@@ -26,51 +26,38 @@ export default function Home() {
       </div>
 
       <div className="container">
-        <h2 className="homepage-heading fs-800 fw-800 uppercase">
-          Shop by category
-        </h2>
+        <section>
+          <h2 className="homepage-heading fs-700 fw-800 uppercase">
+            What we offer
+          </h2>
 
-        <ul aria-label="categories" className="category-list no-list-style">
-          <li>
-            <Link to="shop/men" className="nav-item">
-              <div className="category-card flex align-center">
-                <img
-                  src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
-                  alt=""
-                  aria-hidden
-                  className="category-card__image"
-                />
-                <p className="fw-800 uppercase">Men&apos;s Clothing</p>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link to="shop/women" className="nav-item">
-              <div className="category-card flex align-center">
-                <img
-                  src="https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
-                  alt=""
-                  aria-hidden
-                  className="category-card__image"
-                />
-                <p className="fw-800 uppercase">Women&apos;s Clothing</p>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link to="shop/jewellery" className="nav-item">
-              <div className="category-card flex align-center">
-                <img
-                  src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
-                  alt=""
-                  aria-hidden
-                  className="category-card__image"
-                />
-                <p className="fw-800 uppercase">Jewellery</p>
-              </div>
-            </Link>
-          </li>
-        </ul>
+          <ul
+            aria-label="categories"
+            className="category-list clr-primary-100 no-list-style uppercase"
+          >
+            <li>
+              <Link to="shop/men">
+                <div className="category-item category-item--men nav-item flex">
+                  <h3 className="fs-800">Men&apos;s Clothing</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to="shop/women">
+                <div className="category-item category-item--women nav-item flex">
+                  <h3 className="fs-800">Women&apos;s Clothing</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link to="shop/jewellery">
+                <div className="category-item category-item--jewellery nav-item flex">
+                  <h3 className="fs-800">Jewellery</h3>
+                </div>
+              </Link>
+            </li>
+          </ul>
+        </section>
       </div>
     </>
   );
