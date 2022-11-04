@@ -41,7 +41,7 @@ export default function Home() {
             </Link>
           </li>
           <li>
-            <Link to="women" className="nav-item">
+            <Link to="shop/women" className="nav-item">
               <div className="category-card flex align-center">
                 <img
                   src="https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
@@ -54,7 +54,7 @@ export default function Home() {
             </Link>
           </li>
           <li>
-            <Link to="jewellery" className="nav-item">
+            <Link to="shop/jewellery" className="nav-item">
               <div className="category-card flex align-center">
                 <img
                   src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
