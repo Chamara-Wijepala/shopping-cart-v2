@@ -1,0 +1,32 @@
+.footer-content {
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+  padding-block: 1.5rem;
+}
+
+.footer-list {
+  gap: 1rem;
+}
+
+.footer-nav {
+  margin-left: auto;
+}
+
+.footer-paragraph {
+  max-width: 65ch;
+}
+
+.social-links {
+  justify-content: center;
+}
+
+@media (min-width: 48em) {
+  .footer-paragraph {
+    text-align: start;
+  }
+
+  .social-links {
+    justify-content: flex-end;
+  }
+}

@@ -6,6 +6,7 @@ import Home from "pages/home";
 import Shop from "pages/shop";
 import Product from "pages/product";
 import ProductList from "components/product-list";
+import Footer from "components/footer";
 
 export interface Item {
   id: number;
@@ -75,6 +76,7 @@ export default function App() {
           <Route path="/:id" element={<Product />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
