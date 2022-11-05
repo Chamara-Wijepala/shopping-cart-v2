@@ -26,7 +26,7 @@ export default function Home() {
       </div>
 
       <div className="container">
-        <section>
+        <section className="fade-in-1">
           <h2 className="homepage-heading fs-700 fw-800 uppercase">
             What we offer
           </h2>
