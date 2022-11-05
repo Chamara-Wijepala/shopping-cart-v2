@@ -31,7 +31,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <p className="footer-paragraph">
+        <p className="footer-paragraph fs-350s">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
           incidunt, neque illum quis assumenda eligendi hic fugiat. Quasi alias
           autem, perspiciatis dolorem accusamus quidem atque corrupti harum

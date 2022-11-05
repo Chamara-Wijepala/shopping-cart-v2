@@ -9,7 +9,7 @@ export default function Home() {
         <div className="hero-text container flex">
           <h2 className="fw-800 fs-900 uppercase">Best of the best</h2>
 
-          <p>
+          <p className="fs-500">
             On the hunt for some new fashionable clothes? Or some new pieces of
             jewellery to show off to your friends? We will not let you down.
           </p>
