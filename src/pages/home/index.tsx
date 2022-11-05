@@ -26,7 +26,7 @@ export default function Home() {
       </div>
 
       <div className="container">
-        <section className="fade-in-1">
+        <section className="category-section fade-in-1">
           <h2 className="homepage-heading fs-700 fw-800 uppercase">
             What we offer
           </h2>
@@ -59,6 +59,19 @@ export default function Home() {
           </ul>
         </section>
       </div>
+
+      <section className="about-section clr-primary-100 fade-in-1 flex">
+        <h2 className="fs-900 uppercase">
+          Our <span className="clr-accent-400">story</span>
+        </h2>
+        <p className="about-section__paragraph text-center fs-500">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta
+          corporis enim placeat quia! Delectus tempore, officiis sint aliquid
+          pariatur, soluta quos odio distinctio corrupti vitae laudantium, animi
+          laboriosam dignissimos dolorum consequuntur! Minus sed eligendi
+          nesciunt, velit adipisci voluptatibus eius ipsam!
+        </p>
+      </section>
     </>
   );
 }

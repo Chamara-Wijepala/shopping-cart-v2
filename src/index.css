@@ -9,6 +9,7 @@
   --fs-300: 0.75rem;
   --fs-350: 0.8125rem;
   --fs-400: 1rem;
+  --fs-500: 1.175rem;
   --fs-600: 1.25rem;
   --fs-800: 1.5rem;
   --fs-900: 2rem;
@@ -240,6 +241,9 @@ svg {
 }
 .fs-400 {
   font-size: var(--fs-400);
+}
+.fs-500 {
+  font-size: var(--fs-500);
 }
 .fs-600 {
   font-size: var(--fs-600);
