@@ -35,11 +35,7 @@
 }
 
 .product__add-btn {
-  justify-self: flex-end;
-}
-
-.spinner {
-  justify-content: center;
+  width: 100%;
 }
 
 @media (min-width: 48em) {

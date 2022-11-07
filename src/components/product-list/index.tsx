@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ClimbingBoxLoader } from "react-spinners";
 
 import { Item } from "App";
@@ -29,12 +30,14 @@ export default function ProductList({
                   $ {item.price}
                 </p>
 
-                <button
-                  type="button"
-                  className="product__add-btn btn btn-small btn--accent--inverse fs-350 fw-800 uppercase"
-                >
-                  See product page
-                </button>
+                <Link to={`/product/${item.id}`}>
+                  <button
+                    type="button"
+                    className="product__add-btn btn btn-small btn--accent--inverse fs-350 fw-800 uppercase"
+                  >
+                    See product page
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

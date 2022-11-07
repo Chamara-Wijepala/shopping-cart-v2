@@ -73,7 +73,7 @@ export default function App() {
               }
             />
           </Route>
-          <Route path="/:id" element={<Product />} />
+          <Route path="product/:id" element={<Product products={products} />} />
         </Routes>
       </main>
       <Footer />

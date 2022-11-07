@@ -144,6 +144,10 @@ svg {
   color: hsl(var(--clr-accent-400));
 }
 
+.spinner {
+  justify-content: center;
+}
+
 /* components */
 
 .btn {
@@ -170,6 +174,32 @@ svg {
 .btn--accent--inverse:focus {
   color: hsl(var(--clr-primary-100));
   background-color: hsl(var(--clr-accent-400));
+}
+
+.btn--dark {
+  background-color: hsl(var(--clr-secondary-800));
+}
+.btn--dark:hover,
+.btn--dark:focus {
+  background-color: hsl(var(--clr-secondary-800) / 0.75);
+}
+
+.btn--dark--inverse {
+  border: 3px solid hsl(var(--clr-secondary-800));
+  color: hsl(var(--clr-secondary-800));
+}
+.btn--dark--inverse:hover,
+.btn--dark--inverse:focus {
+  color: hsl(var(--clr-primary-100));
+  background-color: hsl(var(--clr-secondary-800));
+}
+
+.btn--light {
+  background-color: hsl(var(--clr-secondary-200));
+}
+.btn--light:hover,
+.btn--light:focus {
+  background-color: hsl(var(--clr-secondary-800) / 0.15);
 }
 
 /* animations */
@@ -228,6 +258,19 @@ svg {
 }
 .btn-with-icon {
   gap: 0.3rem;
+}
+
+.mb-1 {
+  margin-block: 1rem;
+}
+.mb-2 {
+  margin-block: 2rem;
+}
+.mb-3 {
+  margin-block: 3rem;
+}
+.mb-4 {
+  margin-block: 4rem;
 }
 
 .fs-200 {
