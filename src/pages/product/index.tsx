@@ -25,7 +25,7 @@ export default function Product({ products }: { products: Item[] | null }) {
   }
 
   return (
-    <div className="container">
+    <div className="container fade-in-1">
       <button
         type="button"
         onClick={() => navigate(-1)}
