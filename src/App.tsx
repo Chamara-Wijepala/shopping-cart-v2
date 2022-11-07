@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "components/header";
 import Home from "pages/home";
@@ -23,6 +23,12 @@ export interface Item {
 
 export default function App() {
   const [products, setProducts] = useState<Item[] | null>(null);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
