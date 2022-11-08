@@ -2,12 +2,17 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ClimbingBoxLoader } from "react-spinners";
 
+import useLocalStorage from "hooks/useLocalStorage";
+
 import { Item } from "App";
+import { CartItem } from "types";
 
 import "./product.css";
 
 export default function Product({ products }: { products: Item[] | null }) {
   const [count, setCount] = useState(1);
+
+  const [, setCart] = useLocalStorage<CartItem[]>("cart", []);
 
   const navigate = useNavigate();
 
@@ -22,6 +27,34 @@ export default function Product({ products }: { products: Item[] | null }) {
 
   function decrement() {
     if (count > 1) setCount(count - 1);
+  }
+
+  function addToCart() {
+    if (product) {
+      setCart((items: CartItem[]) => {
+        let newCart: CartItem[] = [...items];
+
+        if (items.find((item) => item.id === product.id)) {
+          // if there's a duplicate item, increase it's quantity by count
+          newCart = items.map((item) => {
+            if (item.id === product.id) {
+              return { ...item, qty: item.qty + count };
+            }
+            return item;
+          });
+        } else {
+          newCart.push({
+            id: product.id,
+            qty: count,
+            title: product.title,
+            image: product.image,
+            price: product.price,
+          });
+        }
+
+        return newCart;
+      });
+    }
   }
 
   return (
@@ -87,6 +120,7 @@ export default function Product({ products }: { products: Item[] | null }) {
 
               <button
                 type="button"
+                onClick={addToCart}
                 className="btn btn--accent clr-primary-100 fw-800 uppercase"
               >
                 Add to cart
