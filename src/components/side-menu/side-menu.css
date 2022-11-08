@@ -4,6 +4,7 @@
   z-index: 9999;
   transform: translateX(100%);
   transition: transform 300ms ease-in-out;
+  overflow-y: scroll;
 }
 
 .side-menu.open {

@@ -31,4 +31,8 @@
   .open-nav-btn {
     display: none;
   }
+
+  .cart-wrapper {
+    min-width: 40rem;
+  }
 }

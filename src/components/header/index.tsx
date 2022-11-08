@@ -8,11 +8,13 @@ import { GoHome } from "react-icons/go";
 import { AiOutlineShop } from "react-icons/ai";
 
 import SideMenu from "components/side-menu";
+import Cart from "components/cart";
 
 import "./header.css";
 
 export default function Header({ itemCount }: { itemCount: number }) {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   /*
     The active class on the Shop NavLink doesn't work when visiting a dynamic
@@ -65,6 +67,7 @@ export default function Header({ itemCount }: { itemCount: number }) {
           <button
             type="button"
             aria-label="open cart"
+            onClick={() => setIsCartOpen(true)}
             className="btn-with-icon nav-item fw-800 clr-primary-100 flex align-center"
           >
             <BiShoppingBag aria-hidden className="icon-md" />
@@ -108,6 +111,17 @@ export default function Header({ itemCount }: { itemCount: number }) {
                 Shop <AiOutlineShop aria-hidden />
               </NavLink>
             </nav>
+          </div>
+        </SideMenu>
+
+        <SideMenu open={isCartOpen}>
+          {/*
+            The wrapper div is required to make the slide in animation work as
+            the width of the side menu drops to 0 when the cart component is
+            unmounted
+          */}
+          <div className="cart-wrapper">
+            {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}
           </div>
         </SideMenu>
       </div>
