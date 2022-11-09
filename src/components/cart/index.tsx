@@ -1,4 +1,5 @@
-import { MdClose } from "react-icons/md";
+import { useState } from "react";
+import { MdClose, MdOutlineLocalShipping } from "react-icons/md";
 import { BiShoppingBag } from "react-icons/bi";
 import CartItem from "components/cart-item";
 
@@ -15,8 +16,11 @@ export default function Cart({
   cart: ICartItem[];
   setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
 }) {
+  const [isCheckedOut, setIsCheckedOut] = useState(false);
+
   function checkout() {
     setCart([]);
+    setIsCheckedOut(true);
   }
 
   const totalPrice = cart
@@ -73,8 +77,22 @@ export default function Cart({
           </>
         ) : (
           <div className="cart-empty flex justify-center align-center">
-            <p className="cart-empty__text fs-600">Your bag is empty</p>
-            <BiShoppingBag className="cart-empty__icon" />
+            {isCheckedOut ? (
+              <>
+                <p className="cart-empty__text fs-600">
+                  Thank you for shopping!
+                </p>
+                <p className="cart-empty__text fs-600">
+                  Your items will be delivered as soon as possible
+                </p>
+                <MdOutlineLocalShipping className="cart-empty__icon" />
+              </>
+            ) : (
+              <>
+                <p className="cart-empty__text fs-600">Your bag is empty</p>
+                <BiShoppingBag className="cart-empty__icon" />
+              </>
+            )}
           </div>
         )}
       </div>
