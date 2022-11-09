@@ -50,7 +50,7 @@ export default function App() {
 
   return (
     <>
-      <Header itemCount={0} cart={cart} setCart={setCart} />
+      <Header cart={cart} setCart={setCart} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -14,11 +14,9 @@ import { ICartItem } from "types";
 import "./header.css";
 
 export default function Header({
-  itemCount,
   cart,
   setCart,
 }: {
-  itemCount: number;
   cart: ICartItem[];
   setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
 }) {
@@ -80,7 +78,7 @@ export default function Header({
             className="btn-with-icon nav-item fw-800 clr-primary-100 flex align-center"
           >
             <BiShoppingBag aria-hidden className="icon-md" />
-            <span aria-hidden>{itemCount}</span>
+            <span aria-hidden>{cart.length}</span>
           </button>
 
           {/* open side nav btn */}
