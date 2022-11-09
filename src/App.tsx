@@ -8,6 +8,8 @@ import Product from "pages/product";
 import ProductList from "components/product-list";
 import Footer from "components/footer";
 
+import { ICartItem } from "types";
+
 export interface Item {
   id: number;
   title: string;
@@ -23,6 +25,7 @@ export interface Item {
 
 export default function App() {
   const [products, setProducts] = useState<Item[] | null>(null);
+  const [cart, setCart] = useState<ICartItem[]>([]);
 
   const location = useLocation();
 
@@ -47,7 +50,7 @@ export default function App() {
 
   return (
     <>
-      <Header itemCount={0} />
+      <Header itemCount={0} cart={cart} setCart={setCart} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -79,7 +82,10 @@ export default function App() {
               }
             />
           </Route>
-          <Route path="product/:id" element={<Product products={products} />} />
+          <Route
+            path="product/:id"
+            element={<Product products={products} setCart={setCart} />}
+          />
         </Routes>
       </main>
       <Footer />

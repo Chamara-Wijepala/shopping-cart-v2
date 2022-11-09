@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { BiShoppingBag } from "react-icons/bi";
 import CartItem from "components/cart-item";
-
-import useLocalStorage from "hooks/useLocalStorage";
 
 import { ICartItem } from "types";
 
@@ -11,20 +8,15 @@ import "./cart.css";
 
 export default function Cart({
   setIsCartOpen,
+  cart,
+  setCart,
 }: {
   setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  cart: ICartItem[];
+  setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
 }) {
-  const [data, , deleteData] = useLocalStorage("cart", []);
-  const [cart, setCart] = useState(data);
-
-  function deleteCart() {
-    deleteData();
-    setCart([]);
-  }
-
   function checkout() {
-    deleteCart();
-    setIsCartOpen(false);
+    setCart([]);
   }
 
   const totalPrice = cart
@@ -39,7 +31,7 @@ export default function Cart({
         {cart.length > 0 && (
           <button
             type="button"
-            onClick={deleteCart}
+            onClick={() => setCart([])}
             className="btn btn--small btn--dark--inverse"
           >
             Remove all items
@@ -64,7 +56,7 @@ export default function Cart({
             >
               {cart.map((item: ICartItem) => (
                 <li key={item.id}>
-                  <CartItem item={item} />
+                  <CartItem item={item} setCart={setCart} />
                 </li>
               ))}
             </ul>

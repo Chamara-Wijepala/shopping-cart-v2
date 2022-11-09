@@ -2,18 +2,20 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ClimbingBoxLoader } from "react-spinners";
 
-import useLocalStorage from "hooks/useLocalStorage";
-
 import { Item } from "App";
 import { ICartItem } from "types";
 
 import "./product.css";
 import Counter from "components/counter";
 
-export default function Product({ products }: { products: Item[] | null }) {
+export default function Product({
+  products,
+  setCart,
+}: {
+  products: Item[] | null;
+  setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
+}) {
   const [count, setCount] = useState(1);
-
-  const [, setCart] = useLocalStorage<ICartItem[]>("cart", []);
 
   const navigate = useNavigate();
 

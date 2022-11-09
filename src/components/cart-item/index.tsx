@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import Counter from "components/counter";
 
-import useLocalStorage from "hooks/useLocalStorage";
-
 import { ICartItem } from "types";
 
 import "./cart-item.css";
 
-export default function CartItem({ item }: { item: ICartItem }) {
+export default function CartItem({
+  item,
+  setCart,
+}: {
+  item: ICartItem;
+  setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
+}) {
   const [count, setCount] = useState(item.qty);
-
-  const [, setCart] = useLocalStorage<ICartItem[]>("cart", []);
 
   // updates item quantity
   useEffect(() => {
