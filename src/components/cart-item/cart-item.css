@@ -1,0 +1,22 @@
+.cart-item {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cart-item__image-wrapper {
+  width: 8rem;
+  height: 8rem;
+}
+
+.cart-item__image {
+  max-width: 6rem;
+  max-height: 6rem;
+  object-fit: contain;
+}
+
+.cart-item__details {
+  display: grid;
+  gap: 1rem;
+}

@@ -1,4 +1,4 @@
-export interface CartItem {
+export interface ICartItem {
   id: number | undefined;
   qty: number;
   title: string | undefined;

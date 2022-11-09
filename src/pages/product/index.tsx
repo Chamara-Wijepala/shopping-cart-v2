@@ -5,14 +5,15 @@ import { ClimbingBoxLoader } from "react-spinners";
 import useLocalStorage from "hooks/useLocalStorage";
 
 import { Item } from "App";
-import { CartItem } from "types";
+import { ICartItem } from "types";
 
 import "./product.css";
+import Counter from "components/counter";
 
 export default function Product({ products }: { products: Item[] | null }) {
   const [count, setCount] = useState(1);
 
-  const [, setCart] = useLocalStorage<CartItem[]>("cart", []);
+  const [, setCart] = useLocalStorage<ICartItem[]>("cart", []);
 
   const navigate = useNavigate();
 
@@ -21,18 +22,10 @@ export default function Product({ products }: { products: Item[] | null }) {
 
   const product = products?.find((item) => item.id === path);
 
-  function increment() {
-    if (count < 100) setCount(count + 1);
-  }
-
-  function decrement() {
-    if (count > 1) setCount(count - 1);
-  }
-
   function addToCart() {
     if (product) {
-      setCart((items: CartItem[]) => {
-        let newCart: CartItem[] = [...items];
+      setCart((items: ICartItem[]) => {
+        let newCart: ICartItem[] = [...items];
 
         if (items.find((item) => item.id === product.id)) {
           // if there's a duplicate item, increase it's quantity by count
@@ -94,29 +87,7 @@ export default function Product({ products }: { products: Item[] | null }) {
             <p className="product-section__desc">{product.description}</p>
 
             <div className="product-section__btn-panel">
-              <div className="product-section__counter clr-primary-100">
-                <button
-                  aria-label="decrement"
-                  type="button"
-                  onClick={decrement}
-                  className="btn btn--small btn--dark fs-500"
-                >
-                  -
-                </button>
-
-                <p className="bg-secondary-800 flex justify-center align-center">
-                  {count} <span className="sr-only">items</span>
-                </p>
-
-                <button
-                  aria-label="increment"
-                  type="button"
-                  onClick={increment}
-                  className="btn btn--small btn--dark fs-500"
-                >
-                  +
-                </button>
-              </div>
+              <Counter count={count} setCount={setCount} />
 
               <button
                 type="button"

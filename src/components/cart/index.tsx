@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { BiShoppingBag } from "react-icons/bi";
+import CartItem from "components/cart-item";
 
 import useLocalStorage from "hooks/useLocalStorage";
 
-import { CartItem } from "types";
+import { ICartItem } from "types";
 
 import "./cart.css";
 
@@ -54,15 +55,9 @@ export default function Cart({
             aria-label="Shopping bag"
             className="cart-item-list no-list-style"
           >
-            {cart.map((item: CartItem) => (
-              <li key={item.id} className="cart-item">
-                <div className="cart-item__image-wrapper bg-primary-100 flex justify-center align-center">
-                  <img src={item.image} alt="" className="cart-item__image" />
-                </div>
-                <div>
-                  <h2 className="fw-800">{item.title}</h2>
-                  <p>$ {item.price}</p>
-                </div>
+            {cart.map((item: ICartItem) => (
+              <li key={item.id}>
+                <CartItem item={item} />
               </li>
             ))}
           </ul>

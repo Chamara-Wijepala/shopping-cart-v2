@@ -23,8 +23,7 @@
   color: hsl(var(--clr-accent-400) / 0.3);
 }
 
-.cart-item-list,
-.cart-item {
+.cart-item-list {
   display: grid;
   gap: 1rem;
 }
@@ -32,21 +31,6 @@
 .cart-item-list {
   justify-self: flex-start;
   grid-auto-rows: max-content;
-}
-
-.cart-item {
-  grid-template-columns: max-content 1fr;
-}
-
-.cart-item__image-wrapper {
-  width: 6rem;
-  height: 6rem;
-}
-
-.cart-item__image {
-  max-width: 5rem;
-  max-height: 5rem;
-  object-fit: contain;
 }
 
 @media (min-width: 48em) {
