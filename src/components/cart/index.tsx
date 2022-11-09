@@ -27,6 +27,12 @@ export default function Cart({
     setIsCartOpen(false);
   }
 
+  const totalPrice = cart
+    .reduce((sum: number, { price, qty }: { price: number; qty: number }) => {
+      return sum + price * qty;
+    }, 0)
+    .toFixed(2);
+
   return (
     <div className="cart flex">
       <div className="flex align-center">
@@ -51,16 +57,28 @@ export default function Cart({
 
       <div className="cart__content">
         {cart.length > 0 ? (
-          <ul
-            aria-label="Shopping bag"
-            className="cart-item-list no-list-style"
-          >
-            {cart.map((item: ICartItem) => (
-              <li key={item.id}>
-                <CartItem item={item} />
-              </li>
-            ))}
-          </ul>
+          <>
+            <ul
+              aria-label="Shopping bag"
+              className="cart-item-list no-list-style"
+            >
+              {cart.map((item: ICartItem) => (
+                <li key={item.id}>
+                  <CartItem item={item} />
+                </li>
+              ))}
+            </ul>
+
+            <p className="fs-500">Total price $ {totalPrice}</p>
+
+            <button
+              type="button"
+              onClick={checkout}
+              className="btn btn--dark--inverse fw-800 uppercase"
+            >
+              Checkout
+            </button>
+          </>
         ) : (
           <div className="cart-empty flex justify-center align-center">
             <p className="cart-empty__text fs-600">Your bag is empty</p>
@@ -68,16 +86,6 @@ export default function Cart({
           </div>
         )}
       </div>
-
-      {cart.length > 0 && (
-        <button
-          type="button"
-          onClick={checkout}
-          className="btn btn--dark--inverse fw-800 uppercase"
-        >
-          Checkout
-        </button>
-      )}
     </div>
   );
 }

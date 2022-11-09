@@ -23,6 +23,11 @@
   color: hsl(var(--clr-accent-400) / 0.3);
 }
 
+.cart__content {
+  display: grid;
+  gap: 3rem;
+}
+
 .cart-item-list {
   display: grid;
   gap: 1rem;
