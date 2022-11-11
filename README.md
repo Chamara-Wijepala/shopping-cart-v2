@@ -28,6 +28,10 @@ This is an e-commerce site I built for my portfolio. I've already built one befo
 
 - [React Router 6: Nested Routes by Robin Wieruch](https://www.robinwieruch.de/react-router-nested-routes/) - This article was very helpful to build the different categories in the shop page.
 
+### Icons
+
+Favicon from [Boxicons](https://boxicons.com/)
+
 ### Images
 
 [Clark Street Mercantile](https://unsplash.com/@mercantile) and [Andrew Leu
