@@ -1,21 +1,18 @@
 import { useState } from "react";
 import { MdClose, MdOutlineLocalShipping } from "react-icons/md";
 import { BiShoppingBag } from "react-icons/bi";
+import useCartStore from "stores/cart";
 import CartItem from "components/cart-item";
-
-import { ICartItem } from "types";
-
+import type { CartItemType } from "types";
 import "./cart.css";
 
 export default function Cart({
   setIsCartOpen,
-  cart,
-  setCart,
 }: {
   setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  cart: ICartItem[];
-  setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
 }) {
+  const cart = useCartStore((state) => state.cart);
+  const setCart = useCartStore((state) => state.setCart);
   const [isCheckedOut, setIsCheckedOut] = useState(false);
 
   function checkout() {
@@ -58,9 +55,9 @@ export default function Cart({
               aria-label="Shopping bag"
               className="cart-item-list no-list-style"
             >
-              {cart.map((item: ICartItem) => (
+              {cart.map((item: CartItemType) => (
                 <li key={item.id}>
-                  <CartItem item={item} setCart={setCart} />
+                  <CartItem item={item} />
                 </li>
               ))}
             </ul>

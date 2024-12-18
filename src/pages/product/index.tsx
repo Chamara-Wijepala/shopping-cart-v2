@@ -2,16 +2,15 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ClimbingBoxLoader } from "react-spinners";
 import useProductsStore from "stores/products";
+import useCartStore from "stores/cart";
 import Counter from "components/counter";
-import type { ICartItem } from "types";
+import { CartItemType } from "types";
 import "./product.css";
 
-export default function Product({
-  setCart,
-}: {
-  setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
-}) {
+export default function Product() {
   const products = useProductsStore((state) => state.products);
+  const cart = useCartStore((state) => state.cart);
+  const setCart = useCartStore((state) => state.setCart);
   const [count, setCount] = useState(1);
 
   const navigate = useNavigate();
@@ -22,31 +21,30 @@ export default function Product({
   const product = products?.find((item) => item.id === path);
 
   function addToCart() {
-    if (product) {
-      setCart((items: ICartItem[]) => {
-        let newCart: ICartItem[] = [...items];
+    if (!product) return;
 
-        if (items.find((item) => item.id === product.id)) {
-          // if there's a duplicate item, increase it's quantity by count
-          newCart = items.map((item) => {
-            if (item.id === product.id) {
-              return { ...item, qty: item.qty + count };
-            }
-            return item;
-          });
-        } else {
-          newCart.push({
-            id: product.id,
-            qty: count,
-            title: product.title,
-            image: product.image,
-            price: product.price,
-          });
+    let newCart: CartItemType[] = [];
+
+    // if there's a duplicate item, increase it's quantity by count
+    if (cart.find((item) => item.id === product.id)) {
+      newCart = cart.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, qty: item.qty + count };
         }
-
-        return newCart;
+        return item;
+      });
+    } else {
+      newCart = [...cart];
+      newCart.push({
+        id: product.id,
+        qty: count,
+        title: product.title,
+        image: product.image,
+        price: product.price,
       });
     }
+
+    setCart(newCart);
   }
 
   return (

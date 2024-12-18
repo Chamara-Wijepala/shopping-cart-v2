@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import useProductsStore from "stores/products";
 import Header from "components/header";
@@ -7,11 +7,9 @@ import Shop from "pages/shop";
 import Product from "pages/product";
 import ProductList from "components/product-list";
 import Footer from "components/footer";
-import { ICartItem } from "types";
 
 export default function App() {
   const fetchProducts = useProductsStore((state) => state.fetchProducts);
-  const [cart, setCart] = useState<ICartItem[]>([]);
 
   const location = useLocation();
 
@@ -25,7 +23,7 @@ export default function App() {
 
   return (
     <>
-      <Header cart={cart} setCart={setCart} />
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -45,7 +43,7 @@ export default function App() {
               element={<ProductList category="jewelery" />} // it's spelled 'jewelery' in the api
             />
           </Route>
-          <Route path="product/:id" element={<Product setCart={setCart} />} />
+          <Route path="product/:id" element={<Product />} />
         </Routes>
       </main>
       <Footer />

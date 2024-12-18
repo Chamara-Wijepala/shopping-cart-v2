@@ -6,20 +6,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import { GoHome } from "react-icons/go";
 import { AiOutlineShop } from "react-icons/ai";
+import useCartStore from "stores/cart";
 import SideMenu from "components/side-menu";
 import Cart from "components/cart";
-
-import { ICartItem } from "types";
-
 import "./header.css";
 
-export default function Header({
-  cart,
-  setCart,
-}: {
-  cart: ICartItem[];
-  setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
-}) {
+export default function Header() {
+  const cart = useCartStore((state) => state.cart);
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -128,13 +121,7 @@ export default function Header({
             unmounted
           */}
           <div className="cart-wrapper">
-            {isCartOpen && (
-              <Cart
-                setIsCartOpen={setIsCartOpen}
-                cart={cart}
-                setCart={setCart}
-              />
-            )}
+            {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}
           </div>
         </SideMenu>
       </div>

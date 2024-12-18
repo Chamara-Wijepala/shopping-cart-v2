@@ -11,10 +11,10 @@ export type Item = {
   };
 };
 
-export interface ICartItem {
+export type CartItemType = {
   id: number;
   qty: number;
   title: string;
   image: string;
   price: number;
-}
+};

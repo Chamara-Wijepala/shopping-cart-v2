@@ -1,36 +1,22 @@
 import { useEffect, useState } from "react";
+import useCartStore from "stores/cart";
 import Counter from "components/counter";
-
-import { ICartItem } from "types";
-
+import type { CartItemType } from "types";
 import "./cart-item.css";
 
-export default function CartItem({
-  item,
-  setCart,
-}: {
-  item: ICartItem;
-  setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
-}) {
+export default function CartItem({ item }: { item: CartItemType }) {
+  const cart = useCartStore((state) => state.cart);
+  const setCart = useCartStore((state) => state.setCart);
   const [count, setCount] = useState(item.qty);
 
-  // updates item quantity
   useEffect(() => {
-    setCart((cartItems) => {
-      let newCart: ICartItem[] = [...cartItems];
-
-      newCart = cartItems.map((cartItem) => {
-        if (cartItem.id === item.id) {
-          return {
-            ...item,
-            qty: count,
-          };
-        }
-        return cartItem;
-      });
-
-      return newCart;
+    const newCart: CartItemType[] = cart.map((cartItem) => {
+      if (cartItem.id === item.id) {
+        return { ...item, qty: count };
+      }
+      return cartItem;
     });
+    setCart(newCart);
   }, [count]);
 
   return (
