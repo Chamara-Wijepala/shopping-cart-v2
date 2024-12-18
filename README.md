@@ -1,6 +1,6 @@
 # fakestore
 
-This is an e-commerce site I built for my portfolio. I've already built one before, but I wasn't really satisfied with that so I built one again.
+An e-commerce site that consumes an API to mock it's product list.
 
 [Live Demo](https://chamara-wijepala.github.io/shopping-cart-v2/)
 
@@ -11,6 +11,7 @@ This is an e-commerce site I built for my portfolio. I've already built one befo
 - TypeScript
 - React
 - React Router
+- Zustand
 
 ### Packages
 
