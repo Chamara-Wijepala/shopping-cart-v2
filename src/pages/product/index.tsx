@@ -1,20 +1,17 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ClimbingBoxLoader } from "react-spinners";
-
-import { Item } from "App";
-import { ICartItem } from "types";
-
-import "./product.css";
+import useProductsStore from "stores/products";
 import Counter from "components/counter";
+import type { ICartItem } from "types";
+import "./product.css";
 
 export default function Product({
-  products,
   setCart,
 }: {
-  products: Item[] | null;
   setCart: React.Dispatch<React.SetStateAction<ICartItem[]>>;
 }) {
+  const products = useProductsStore((state) => state.products);
   const [count, setCount] = useState(1);
 
   const navigate = useNavigate();
